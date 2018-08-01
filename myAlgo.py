@@ -17,6 +17,8 @@ def handle_data(context, data):
     last3[:] = last3orig
 
 
+
+
     if context.portfolio.positions[context.asset].amount == 0:
         if sorted(last3) == last3:
             print("here")
@@ -26,7 +28,11 @@ def handle_data(context, data):
             order(context.asset, buy_amount)
 
     else:
-        if sorted(last3) != last3 and (context.cur_price * 1.3) < data.current(context.asset, 'price'):
+        if data.current(context.asset, 'price') < .9 * context.cur_price:
+            num = context.portfolio.positions[context.asset].amount
+            order(context.asset, -num)
+
+        if  sorted(last3) != last3 and (context.cur_price * 1.15) < data.current(context.asset, 'price'):
             print("HERE")
             num = context.portfolio.positions[context.asset].amount
             order(context.asset, -num)
@@ -46,10 +52,11 @@ def analyze(context, results):
 
 if __name__ == '__main__':
     # Bitcoin data is available from 2015-3-2. Dates vary for other tokens.
-    start = datetime(2016, 1, 1, 0, 0, 0, 0, pytz.utc)
-    end = datetime(2018, 7, 2, 0, 0, 0, 0, pytz.utc)
+    start = datetime(2018, 1, 22, 0, 0, 0, 0, pytz.utc)
+    end = datetime(2018, 7, 29, 0, 0, 0, 0, pytz.utc)
     results = run_algorithm(initialize=initialize,
                             handle_data=handle_data,
+                            data_frequency='minute',
                             analyze=analyze,
                             start=start,
                             end=end,
