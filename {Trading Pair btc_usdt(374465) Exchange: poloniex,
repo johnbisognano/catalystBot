@@ -1,0 +1,6 @@
+{Trading Pair btc_usdt(374465) Exchange: poloniex,
+ Introduced On: 2015-02-19 00:00:00+00:00,
+  Base Currency: btc,
+   Quote Currency: usdt,
+    Exchange Leverage: 1.0,
+     Minimum Trade Size: 0.0001 Last daily ingestion: 2018-07-30 00:00:00+00:00 Last minutely ingestion: 2018-07-30 00:00:00+00:00: Position({'asset': Trading Pair btc_usdt(374465) Exchange: poloniex, Introduced On: 2015-02-19 00:00:00+00:00, Base Currency: btc, Quote Currency: usdt, Exchange Leverage: 1.0, Minimum Trade Size: 0.0001 Last daily ingestion: 2018-07-30 00:00:00+00:00 Last minutely ingestion: 2018-07-30 00:00:00+00:00, 'amount': 51, 'cost_basis': 9148.68010894873, 'last_sale_price': 9038.62096712, 'last_sale_date': Timestamp('2018-05-01 00:51:00+0000', tz='UTC')})}
